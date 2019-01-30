@@ -6,7 +6,11 @@ describe('Viewing the board', () => {
     cy.contains("Next player: X")
   });
   it('Displays the grid', () => {
+    const tileOne = cy
     cy.get('[class="square"]')
-      .contains('0')
+      .first()
+      .click()
+      
+    tileOne.should("have.text", "X")
   });
 });
