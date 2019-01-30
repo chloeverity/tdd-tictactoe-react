@@ -36,7 +36,7 @@ describe('Viewing the board', () => {
       .click()
     cy.get('[class="square2"]')
       .click()
-    cy.contains("Winner: Player 1")
+    cy.contains("Winner: X")
 
   })
 });
