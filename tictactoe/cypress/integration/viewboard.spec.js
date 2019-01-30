@@ -6,11 +6,16 @@ describe('Viewing the board', () => {
     cy.contains("Next player: X")
   });
   it('Displays the grid', () => {
+    cy.get('[class="square"]')
+      .first()
+      .contains("0")
+  })
+  it('Clicking on a square fills it with an X', () => {
     const tileOne = cy
     cy.get('[class="square"]')
       .first()
       .click()
-      
+
     tileOne.should("have.text", "X")
   });
 });
