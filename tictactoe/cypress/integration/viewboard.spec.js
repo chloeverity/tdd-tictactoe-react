@@ -1,10 +1,11 @@
 describe('Viewing the board', () => {
-  it('Displays who the next player is', () => {
+  beforeEach(() => {
     cy.visit('http://localhost:3000')
+  })
+  it('Displays who the next player is', () => {
     cy.contains("Next player: X")
   });
   it('Displays the grid', () => {
-    cy.visit('http://localhost:3000')
     cy.get('[class="square"]')
       .contains('0')
   });
