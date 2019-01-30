@@ -18,4 +18,15 @@ describe('Viewing the board', () => {
 
     tileOne.should("have.text", "X")
   });
+  it('Clicking on a second square fills it with an O', () => {
+    cy.get('[class="square"]')
+      .first()
+      .click()
+      .contains("X")
+
+    cy.get('[class="square"]')
+      .last()
+      .click()
+      .contains("O")
+  })
 });
