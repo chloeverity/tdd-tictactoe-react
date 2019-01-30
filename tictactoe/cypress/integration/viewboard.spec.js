@@ -53,4 +53,10 @@ describe('Viewing the board', () => {
       .click()
       .should("have.text", "")
   })
+  it('should stop you from clicking a tile that has already been taken', () => {
+    cy.get('[class="square0"]')
+      .click()
+      .click()
+      .contains("X")
+  })
 });
