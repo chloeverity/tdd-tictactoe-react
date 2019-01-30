@@ -37,6 +37,20 @@ describe('Viewing the board', () => {
     cy.get('[class="square2"]')
       .click()
     cy.contains("Winner: X")
-
+  })
+  it('you cannot click any square if someone has already won', () => {
+    cy.get('[class="square0"]')
+      .click()
+    cy.get('[class="square4"]')
+      .click()
+    cy.get('[class="square1"]')
+      .click()
+    cy.get('[class="square5"]')
+      .click()
+    cy.get('[class="square2"]')
+      .click()
+    cy.get('[class="square8"]')
+      .click()
+      .should("have.text", "")
   })
 });
