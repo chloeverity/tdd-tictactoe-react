@@ -7,8 +7,8 @@ describe('Viewing the board', () => {
   });
   it('Displays the grid', () => {
     cy.get('[class="square"]')
-      .first()
-      .contains("0")
+      .last()
+      .should('have.value', '');
   })
   it('Clicking on a square fills it with an X', () => {
     const tileOne = cy
