@@ -4,7 +4,7 @@ import './index.css';
 
 function Square(props) {
   return (
-    <button className="square" onClick={props.onClick}>
+    <button className={`square${props.tileNumber}`} onClick={props.onClick}>
       {props.value}
     </button>
   );
@@ -33,6 +33,7 @@ class Board extends React.Component {
       <Square
         value={this.state.squares[i]}
         onClick={() => this.handleClick(i)}
+        tileNumber={i}
       />
     );
   }
@@ -78,6 +79,8 @@ class Game extends React.Component {
     );
   }
 }
+
+
 
 // ========================================
 
